@@ -46,11 +46,12 @@ public class UserService {
 		a.setEmail(data.getEmail());
 		a.setTelephone(data.getTelephone());
 		return repo.save(a);
+
 	}
 
 }
-
-//Optional<UserModel> a = repo.findById(id);if(a.isPresent())
+//Optional<UserModel> a = repo.findById(id);
+//if(a.isPresent())
 //{
 //	a.setUsername(data.getUsername());
 //	a.setPassword(data.getPassword());
