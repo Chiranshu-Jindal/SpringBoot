@@ -1,6 +1,6 @@
 package com.btidab.user.entity;
 
-public class stat {
+public class Stat {
 	private int getbyidnumber;
 	private int getallusernumber;
 	private int deletenumber;
