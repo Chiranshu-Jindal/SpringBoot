@@ -23,7 +23,7 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
-	
+
 	@Autowired
 	private StatService statservice;
 
@@ -59,9 +59,9 @@ public class UserController {
 		UserModel updateduser = service.updateuser(id, data);
 		return ResponseEntity.ok(updateduser);
 	}
-	
+
 	@GetMapping("/users/stats")
-	public ResponseEntity<StatModel> getstat(){
+	public ResponseEntity<StatModel> getstat() {
 		return ResponseEntity.ok(statservice.getstats());
 	}
 }

@@ -29,41 +29,41 @@ public class StatService {
 	}
 
 	public void incrementid() {
-		StatModel stat = new StatModel();
+		StatModel stat = loadstat();
 		long count = stat.getId();
 		stat.setId(count + 1);
 		savestats(stat);
 	}
 
 	public void incrementgetbyid() {
-		StatModel stat = new StatModel();
+		StatModel stat = loadstat();
 		int count = stat.getGet_by_id();
 		stat.setGet_by_id(count + 1);
 		savestats(stat);
 	}
 
 	public void incrementgetall() {
-		StatModel stat = new StatModel();
+		StatModel stat = loadstat();
 		int count = stat.getGet_all_user();
 		stat.setGet_all_user(count + 1);
 		savestats(stat);
 	}
 
 	public void incrementdelete() {
-		StatModel stat = new StatModel();
+		StatModel stat = loadstat();
 		int count = stat.getDelete_user();
 		stat.setDelete_user(count + 1);
 		savestats(stat);
 	}
 
 	public void incrementinsert() {
-		StatModel stat = new StatModel();
+		StatModel stat = loadstat();
 		stat.setInsert_data(stat.getInsert_data());
 		savestats(stat);
 	}
 
 	public void incrementupdate() {
-		StatModel stat = new StatModel();
+		StatModel stat = loadstat();
 		int count = stat.getUpdate_user();
 		stat.setUpdate_user(count + 1);
 		savestats(stat);
