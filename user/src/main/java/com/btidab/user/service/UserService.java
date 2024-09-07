@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.btidab.user.controller.UserController;
 import com.btidab.user.model.UserModel;
 import com.btidab.user.repos.UserRepository;
 
@@ -17,6 +17,9 @@ public class UserService {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@Autowired
 	private UserRepository repo;
 
@@ -28,6 +31,9 @@ public class UserService {
 		logger.trace("enter createuser() method");
 		logger.debug("incremented stat.insert count: {}", stat.incrementinsert());
 		stat.incrementinsert();
+		String encodedpassword = passwordEncoder.encode(u.getPassword());
+		u.setPassword(encodedpassword);
+		logger.warn("password is stored in encrypted form");
 		logger.info("user successfully created");
 		return repo.save(u);
 	}
