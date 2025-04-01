@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.btidab.user.model.UserModel;
@@ -19,14 +19,13 @@ public class UserService {
 
 //	@Autowired
 //	private PasswordEncoder passwordEncoder;
-	
+
 	@Autowired
 	private UserRepository repo;
 
 	@Autowired
 	private StatService stat;
 
-	
 	// Create
 	public UserModel createuser(UserModel u) {
 		logger.trace("enter createuser() method");
